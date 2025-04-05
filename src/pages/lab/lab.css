@@ -1,0 +1,87 @@
+/* Lab Page Styles */
+.lab-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+    color: white;
+}
+
+/* Title Styling */
+.lab-title {
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    margin-top: 75px; /* Push it down from the navbar */
+}
+
+/* Description */
+.lab-description {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Grid Layout */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Individual Grid Box */
+.lab-box {
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Unique Colors for Each Box */
+.sql { background: #FF5733; } /* Reddish Orange */
+.xss { background: #FFC300; } /* Bright Yellow */
+.path { background: #4CAF50; } /* Green */
+.command { background: #1E88E5; } /* Blue */
+.info { background: #8E24AA; } /* Purple */
+.upload { background: #FF5722; } /* Deep Orange */
+.ssrf { background: #795548; } /* Brown */
+.xxe { background: #9C27B0; } /* Dark Pink */
+.ssti { background: #D50000; } /* Dark Red */
+
+/* Hover Effect */
+.lab-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .lab-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-grid {
+        grid-template-columns: repeat(1, 1fr); /* Switch to 1 column for small screens */
+    }
+}

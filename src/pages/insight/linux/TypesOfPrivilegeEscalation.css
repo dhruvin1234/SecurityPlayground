@@ -1,0 +1,24 @@
+.types-container {
+    padding: 20px;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.types-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.types-container h2 {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #34495e;
+}
+
+.types-container p {
+    font-size: 16px;
+    line-height: 1.5;
+}
