@@ -1,71 +1,76 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./lab2.css";
+  import React, { useState, useEffect } from "react";
+  import "./lab2.css";
 
-const BasicSQLInjection = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const navigate = useNavigate();
+  const SQLInjectionRetrieveHiddenData = () => {
+    const [search, setSearch] = useState("");
+    const [products, setProducts] = useState([]);
+    const [message, setMessage] = useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+    const handleSearch = async (e) => {
+      e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+      try {
+        const response = await fetch("http://localhost:5000/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ search }),
+        });
 
-      const data = await response.json();
-      setMessage(data.message);
-      
-      if (data.message.includes("Login successful")) {
-        setTimeout(() => navigate("/lab/sql-injection/lab2/sql_injection_flag2"), 2000);
+        const data = await response.json();
+        if (data.length === 0) {
+          setMessage("No products found.");
+        } else {
+          setMessage("");
+        }
+        setProducts(data);
+      } catch (error) {
+        setMessage("Server error");
       }
-    } catch (error) {
-      setMessage("Error connecting to server!");
-    }
+    };
+
+    return (
+      <div className="sql-lab-container">
+        {/* NAVBAR (same as lab1) */}
+        <nav className="navbar">
+          <h2>Vulnerable Web App</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Admin</a></li>
+          </ul>
+        </nav>
+
+        {/* Search Panel */}
+        <div className="search-section">
+          <h2>🛍️ Product Finder</h2>
+          <p className="hint">Try to reveal hidden product data using SQL Injection</p>
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search for products..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              required
+            />
+            <button type="submit">Search</button>
+          </form>
+          <p className="message">{message}</p>
+        </div>
+
+        {/* Results */}
+        <div className="product-grid">
+          {products.map((product, idx) => (
+            <div className="product-card" key={idx}>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              {product.description && <p><strong>Description:</strong> {product.description}</p>}
+              {product.price && <p><strong>Price:</strong> ${product.price}</p>}
+              {product.stock && <p><strong>In Stock:</strong> {product.stock}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
-  return (
-    <div className="sql-lab-container">
-      {/* 🔹 NAVBAR WITH DUMMY LINKS */}
-      <nav className="navbar">
-        <h2>Vulnerable Web App</h2>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">Admin Panel</a></li>  {/* Fake vulnerable link */}
-        </ul>
-        <button className="login-btn" onClick={() => setShowPopup(true)}>Login</button>
-      </nav>
-
-      {/* 🔹 LOGIN POPUP */}
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <span className="close" onClick={() => setShowPopup(false)}>&times;</span>
-            <h2>Login</h2>
-            <p className="instruction">Hint: Try SQL Injection to bypass authentication.</p> {/* ✅ Added instruction */}
-            <form onSubmit={handleLogin}>
-              <label>Username:</label>
-              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
-              <label>Password:</label>
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-              <button type="submit">Login</button>
-            </form>
-            <p className="message">{message}</p>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default BasicSQLInjection;
-
-// ' OR '1'='1' --
+  export default SQLInjectionRetrieveHiddenData;

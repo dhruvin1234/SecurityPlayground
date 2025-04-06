@@ -1,15 +1,14 @@
 /* 🔹 Scoped styles for Lab1 only */
 .sql-lab-container {
-    height: 100vh;
+    min-height: 100vh;
     background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-/* 🔹 Navbar Styling */
-.sql-lab-container .navbar {
+  }
+  
+  /* 🔹 Navbar Styling */
+  .sql-lab-container .navbar {
     width: 100%;
     background: #007bff;
     color: white;
@@ -17,32 +16,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.sql-lab-container .navbar ul {
+  }
+  
+  .sql-lab-container .navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.sql-lab-container .navbar ul li {
+  }
+  
+  .sql-lab-container .navbar ul li {
     margin: 0 15px;
-}
-
-.sql-lab-container .navbar ul li a {
+  }
+  
+  .sql-lab-container .navbar ul li a {
     text-decoration: none;
     color: white;
     font-size: 16px;
     transition: color 0.3s;
-}
-
-.sql-lab-container .navbar ul li a:hover {
+  }
+  
+  .sql-lab-container .navbar ul li a:hover {
     color: #ff6600;
-}
-
-/* 🔹 Login Button */
-.sql-lab-container .login-btn {
+  }
+  
+  .sql-lab-container .login-btn {
     background: #ff6600;
     border: none;
     padding: 10px 15px;
@@ -51,14 +49,14 @@
     border-radius: 5px;
     transition: background 0.3s;
     color: white;
-}
-
-.sql-lab-container .login-btn:hover {
+  }
+  
+  .sql-lab-container .login-btn:hover {
     background: #e55d00;
-}
-
-/* 🔹 Popup Modal Styling */
-.sql-lab-container .popup {
+  }
+  
+  /* 🔹 Popup Modal Styling */
+  .sql-lab-container .popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -68,10 +66,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* 🔹 Popup Content */
-.sql-lab-container .popup-content {
+  }
+  
+  /* 🔹 Popup Content */
+  .sql-lab-container .popup-content {
     background: white;
     padding: 25px;
     width: 350px;
@@ -79,51 +77,49 @@
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     position: relative;
-}
-
-/* 🔹 Close Button */
-.sql-lab-container .close {
+  }
+  
+  .sql-lab-container .close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 22px;
     cursor: pointer;
     color: #333;
-}
-
-.sql-lab-container .close:hover {
+  }
+  
+  .sql-lab-container .close:hover {
     color: red;
-}
-
-/* 🔹 Login Form Styling */
-.sql-lab-container .popup-content h2 {
+  }
+  
+  .sql-lab-container .popup-content h2 {
     margin-bottom: 10px;
     color: #222;
-}
-
-.sql-lab-container .instruction {
+  }
+  
+  .sql-lab-container .instruction {
     font-size: 14px;
     color: #444;
     margin-bottom: 15px;
-}
-
-.sql-lab-container .popup-content label {
+  }
+  
+  .sql-lab-container .popup-content label {
     display: block;
     text-align: left;
     margin-top: 10px;
     font-weight: bold;
     color: #222;
-}
-
-.sql-lab-container .popup-content input {
+  }
+  
+  .sql-lab-container .popup-content input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #aaa;
     border-radius: 4px;
-}
-
-.sql-lab-container .popup-content button {
+  }
+  
+  .sql-lab-container .popup-content button {
     margin-top: 15px;
     padding: 10px;
     width: 100%;
@@ -133,15 +129,75 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-}
-
-.sql-lab-container .popup-content button:hover {
+  }
+  
+  .sql-lab-container .popup-content button:hover {
     background-color: #0056b3;
-}
-
-/* 🔹 Message Styling */
-.sql-lab-container .message {
+  }
+  
+  .sql-lab-container .message {
     margin-top: 15px;
     font-weight: bold;
     color: red;
-}
+  }
+  
+  /* 🔹 Product Section */
+  .product-section {
+    padding: 40px 60px;
+    background-color: #f0f2f5;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .product-section h2 {
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 220px;
+    transition: transform 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .product-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .product-card span {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+  }
+  
+  .product-card h3 {
+    color: black;
+    margin-top: 10px;
+  }

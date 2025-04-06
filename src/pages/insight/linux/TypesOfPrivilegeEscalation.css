@@ -1,24 +1,135 @@
 .types-container {
-    padding: 20px;
-    background-color: white;
+    padding: 30px;
+    background-color: #fdfdfd;
     color: #333;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Headings */
 .types-container h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 20px;
     color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
 }
 
 .types-container h2 {
-    font-size: 22px;
-    margin-top: 20px;
+    font-size: 24px;
+    margin-top: 30px;
     color: #34495e;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+    margin-bottom: 10px;
+
+    /* Ensures headings aren't hidden under sticky navbar */
+    scroll-margin-top: 100px; /* adjust if navbar height is different */
 }
 
+/* Paragraphs */
 .types-container p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* Code blocks */
+.types-container pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    color: #2c3e50;
+}
+
+/* Lists */
+.types-container ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.types-container ul li {
+    margin-bottom: 8px;
+}
+
+/* Tip/Note style */
+.types-container .note {
+    background-color: #eaf6ff;
+    border-left: 5px solid #3498db;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+
+
+
+/* SUID Binaries Section */
+#suidBinaries {
+    margin-top: 40px;
+}
+
+#suidBinaries h2 {
+    font-size: 24px;
+    color: #e67e22;
+    border-left: 4px solid #e67e22;
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+#suidBinaries h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#suidBinaries p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+#suidBinaries ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#suidBinaries ul li {
+    margin-bottom: 8px;
+}
+
+#suidBinaries a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+#suidBinaries a:hover {
+    text-decoration: underline;
+}
+
+#suidBinaries .note {
+    background-color: #fff8e1;
+    border-left: 5px solid #f39c12;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+#suidBinaries pre {
+    background-color: #f4f4f4;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    font-family: monospace;
 }
