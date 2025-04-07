@@ -1,4 +1,4 @@
-/* 🔹 Scoped styles for Lab1 only */
+
 .sql-lab-container {
     min-height: 100vh;
     background: white;
@@ -7,7 +7,7 @@
     align-items: center;
   }
   
-  /* 🔹 Navbar Styling */
+  
   .sql-lab-container .navbar {
     width: 100%;
     background: #007bff;

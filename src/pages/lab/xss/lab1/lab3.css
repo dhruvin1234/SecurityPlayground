@@ -1,0 +1,30 @@
+.lab3-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .lab3-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .lab3-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .output-box {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    word-wrap: break-word;
+  }
+  

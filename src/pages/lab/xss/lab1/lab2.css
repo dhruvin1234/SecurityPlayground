@@ -1,0 +1,101 @@
+/* Container */
+.lab2-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    color: white;
+    overflow-y: auto;
+  }
+  
+  /* Title */
+  .lab2-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Description */
+  .lab2-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  /* Form */
+  form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  form button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1abc9c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #16a085;
+  }
+  
+  /* Comments */
+  .comments-section {
+    margin-top: 40px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .comments-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .comment {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+    word-break: break-word;
+  }
+  
+  /* Scrollbar Styling */
+  .lab2-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .lab2-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+  }
+  
+  .lab2-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    form textarea {
+      width: 100%;
+    }
+  
+    .comments-section {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  

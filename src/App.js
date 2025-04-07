@@ -14,6 +14,12 @@ import SQLInjectionFlag2 from "./pages/lab/sql-injection/lab2/sql_injection_flag
 
 import WebPentesting from "./pages/insight/webs/WebPentesting";
 
+//for xss
+import XSS from "./pages/lab/xss/index"; 
+import XSSLab1 from "./pages/lab/xss/lab1/lab1";
+import XSSLab2 from "./pages/lab/xss/lab1/lab2";
+import XSSLab3 from "./pages/lab/xss/lab1/lab3";
+
 function App() {
     return (
         <Router>
@@ -31,6 +37,13 @@ function App() {
 
                 <Route path="/insight/windows" element={<WindowsPentesting />} />
                 <Route path="/insight/linux" element={<Linux />} />  {/* ✅ FIXED PATH */}
+
+
+                {/* xss */}
+                <Route path="/lab/xss" element={<XSS />} />
+                <Route path="/lab/xss/lab1" element={<XSSLab1 />} />
+                <Route path="/lab/xss/lab2" element={<XSSLab2 />} />
+                <Route path="/lab/xss/lab3" element={<XSSLab3 />} />
             </Routes>
         </Router>
     );
