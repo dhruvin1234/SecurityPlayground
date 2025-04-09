@@ -19,6 +19,16 @@ import XSS from "./pages/lab/xss/index";
 import XSSLab1 from "./pages/lab/xss/lab1/lab1";
 import XSSLab2 from "./pages/lab/xss/lab1/lab2";
 import XSSLab3 from "./pages/lab/xss/lab1/lab3";
+import XSSLab4 from "./pages/lab/xss/lab1/lab4";
+import XSSLab5 from "./pages/lab/xss/lab1/lab5";
+
+//for commandinjection
+import CommandInjection from './pages/lab/commandinjection/index';
+// import CommandInjectionLab1 from './pages/lab/commandinjection/lab/lab1';
+import CommandInjectionLab1 from './pages/lab/commandinjection/lab/lab1';
+import CommandInjectionLab2 from './pages/lab/commandinjection/lab/lab2';
+import CommandInjectionLab3 from './pages/lab/commandinjection/lab/lab3';
+import CommandInjectionLab4 from './pages/lab/commandinjection/lab/lab4';
 
 function App() {
     return (
@@ -44,6 +54,16 @@ function App() {
                 <Route path="/lab/xss/lab1" element={<XSSLab1 />} />
                 <Route path="/lab/xss/lab2" element={<XSSLab2 />} />
                 <Route path="/lab/xss/lab3" element={<XSSLab3 />} />
+                <Route path="/lab/xss/lab4" element={<XSSLab4 />} />
+                <Route path="/lab/xss/lab5" element={<XSSLab5 />} />
+
+                {/* commandinjection */}
+                <Route path="/lab/commandinjection" element={<CommandInjection />} />
+                <Route path="/lab/commandinjection/lab1" element={<CommandInjectionLab1 />} />
+                <Route path="/lab/commandinjection/lab2" element={<CommandInjectionLab2 />} />
+                <Route path="/lab/commandinjection/lab3" element={<CommandInjectionLab3 />} />
+                <Route path="/lab/commandinjection/lab4" element={<CommandInjectionLab4 />} />
+
             </Routes>
         </Router>
     );

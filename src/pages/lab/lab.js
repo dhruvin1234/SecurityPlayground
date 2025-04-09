@@ -33,7 +33,7 @@ const Lab = () => {
           <Link to="/lab/path-traversal" className="lab-box path">
             <h2>Path Traversal</h2>
           </Link>
-          <Link to="/lab/command-injection" className="lab-box command">
+          <Link to="/lab/commandinjection" className="lab-box command">
             <h2>Command Injection</h2>
           </Link>
           <Link to="/lab/info-disclosure" className="lab-box info">

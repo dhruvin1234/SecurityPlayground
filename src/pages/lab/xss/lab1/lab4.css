@@ -1,0 +1,75 @@
+/* pages/lab/xss/lab4/lab4.css */
+.lab4-container {
+    overflow: hidden;
+}
+
+.lab4-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab4-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lab4-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #cccccc;
+}
+
+.lab4-input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lab4-input {
+    padding: 12px;
+    width: 400px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.lab4-button {
+    padding: 12px 25px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lab4-button:hover {
+    background-color: #e63a3a;
+}
+
+.lab4-output {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    word-wrap: break-word;
+    overflow-x: auto;
+    text-align: center;
+}
