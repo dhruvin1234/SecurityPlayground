@@ -7,33 +7,37 @@ function XSSLab4() {
     const [content, setContent] = useState("");
 
     const showImage = () => {
-        // ⚠️ Vulnerable injection point (intentionally)
+        // ⚠️ Intentionally vulnerable
         setContent(`<img src="${imageUrl}" alt="XSS Test">`);
     };
 
     return (
         <div className="lab4-container">
-            <h1 className="lab4-title">Lab 4: XSS in HTML Tag Attributes</h1>
-            <p className="lab4-description">
-                Enter an image URL or try injecting into an attribute:
-            </p>
-            <div className="lab4-input-group">
-                <input
-                    type="text"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
-                    placeholder={`x" onerror="alert('XSS')`}
-                    className="lab4-input"
-                />
-                <button onClick={showImage} className="lab4-button">
-                    Show Image
-                </button>
+            <div className="lab4-box">
+                <h1 className="lab4-title">Lab 4: XSS in HTML Tag Attributes</h1>
+                <p className="lab4-description">
+                    Enter an image URL or try injecting into an attribute:
+                </p>
+
+                <div className="lab4-form">
+                    <input
+                        type="text"
+                        value={imageUrl}
+                        onChange={(e) => setImageUrl(e.target.value)}
+                        placeholder={`x" onerror="alert('XSS')`}
+                        className="lab4-input"
+                    />
+                    <button onClick={showImage} className="lab4-button">
+                        Show Image
+                    </button>
+                </div>
+
+                <div
+                    id="image-container"
+                    className="lab4-output"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                ></div>
             </div>
-            <div
-                id="image-container"
-                className="lab4-output"
-                dangerouslySetInnerHTML={{ __html: content }}
-            ></div>
         </div>
     );
 }

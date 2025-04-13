@@ -30,26 +30,27 @@ const Lab = () => {
           <Link to="/lab/xss" className="lab-box xss">
             <h2>Cross-Site Scripting (XSS)</h2>
           </Link>
-          <Link to="/lab/path-traversal" className="lab-box path">
+          <Link to="/lab/pathtraversal" className="lab-box path">
             <h2>Path Traversal</h2>
           </Link>
           <Link to="/lab/commandinjection" className="lab-box command">
             <h2>Command Injection</h2>
           </Link>
-          <Link to="/lab/info-disclosure" className="lab-box info">
+          <Link to="/lab/informationdisclosure" className="lab-box info">
             <h2>Information Disclosure</h2>
           </Link>
-          <Link to="/lab/file-upload" className="lab-box upload">
+          <Link to="/lab/fileupload" className="lab-box upload">
             <h2>File Upload</h2>
           </Link>
           <Link to="/lab/ssrf" className="lab-box ssrf">
             <h2>SSRF</h2>
           </Link>
-          <Link to="/lab/xxe-injection" className="lab-box xxe">
-            <h2>XXE Injection</h2>
-          </Link>
+         
           <Link to="/lab/ssti" className="lab-box ssti">
             <h2>Server-Side Template Injection (SSTI)</h2>
+          </Link>
+          <Link to="/lab/xxe-injection" className="lab-box xxe">
+            <h2></h2>
           </Link>
         </div>
       </div>

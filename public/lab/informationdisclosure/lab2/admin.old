@@ -1,0 +1,4 @@
+// config.txt~
+DB_USER=admin
+DB_PASS=SuperSecret123!
+ADMIN_PANEL=/admin-secret

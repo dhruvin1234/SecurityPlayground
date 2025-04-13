@@ -53,3 +53,6 @@ const Lab1 = () => {
 };
 
 export default Lab1;
+
+
+// <script>alert(1)</script>

@@ -1,0 +1,11 @@
+app:
+  name: MySecureApp
+  environment: development
+  debug: true
+
+database:
+  host: localhost
+  user: admin
+  password: Pa$$w0rd
+
+admin_panel: /internal-admin

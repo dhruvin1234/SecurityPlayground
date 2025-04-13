@@ -1,0 +1,87 @@
+/* Full page layout */
+.lab2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #16222a, #3a6073);
+    height: 100vh;
+    color: white;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  
+  /* Main lab box */
+  .lab2-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Titles and descriptions */
+  .lab2-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .lab2-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  /* Input + Button layout */
+  .lab2-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field */
+  .lab2-input {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    min-width: 250px;
+    font-size: 16px;
+  }
+  
+  /* Submit button */
+  .lab2-button {
+    padding: 10px 20px;
+    background-color: #1a2b38;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
+  }
+  
+  .lab2-button:hover {
+    background-color: #3a6073;
+  }
+  
+  /* Output section */
+  .lab2-output {
+    text-align: left;
+  }
+  
+  .lab2-result-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    margin-top: 10px;
+    overflow: auto;
+    max-height: 300px;
+  }
+  

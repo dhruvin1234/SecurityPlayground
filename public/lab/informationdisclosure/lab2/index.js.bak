@@ -1,0 +1,19 @@
+// Old backup of index.js
+import express from "express";
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Welcome to our official website!");
+});
+
+app.get("/admin-secret", (req, res) => {
+  res.send("🔒 Admin Panel - Authorized personnel only!");
+});
+
+// Secret accidentally left in backup
+const SECRET_FLAG = "FLAG{backup_file_disclosure_works_2025}";
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});

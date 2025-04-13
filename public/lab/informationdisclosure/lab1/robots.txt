@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin-panel
+Disallow: /hidden-login
+Disallow: /secret-backup
+Disallow: /old-site
+Disallow: /staff-only
+
+# Internal Note: Temporary admin backup - do not delete
+# TODO: Move /hidden-login to /secure-auth and change credentials
+# Admin credentials stored in /secret-backup/creds.bak
+
+# Pentest Notes:
+# - /admin-panel uses basic auth (check .htpasswd)
+# - /old-site contains legacy PHP pages with known issues
