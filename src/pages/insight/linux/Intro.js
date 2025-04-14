@@ -1,33 +1,21 @@
-import React from "react";
+import React from 'react';
 import "./Intro_l.css";
-
 const Intro = () => {
   return (
-    <div className="intro-container">
-      <h1 className="intro-title">Introduction to Linux Privilege Escalation</h1>
-      <p className="intro-content">
-        Privilege escalation is a crucial concept in Linux security. It occurs when an attacker gains higher privileges than intended, allowing them to execute commands with elevated permissions.
+    <div className="intro-section">
+      <h1>Introduction to Linux Privilege Escalation</h1>
+      <p>
+        Linux privilege escalation is the process by which an attacker exploits vulnerabilities in a system to gain higher privileges than those originally assigned. Typically, the goal is to gain root (administrative) access, allowing the attacker to perform actions that would otherwise be restricted.
       </p>
-
-      <h2 className="intro-title">Why is Privilege Escalation Important?</h2>
-      <ul className="intro-content">
-        <li>Allows attackers to gain root access</li>
-        <li>Can be used to modify critical system files</li>
-        <li>Leads to full system compromise</li>
-      </ul>
-
-      <h2 className="intro-title">Types of Privilege Escalation</h2>
-      <p className="intro-content">
-        There are two main types of privilege escalation:
+      <p>
+        Privilege escalation can occur due to misconfigurations, software bugs, or vulnerabilities in the Linux kernel or software packages. Once an attacker has limited access, they can use various techniques to escalate their privileges and potentially take full control of the system.
       </p>
-      <ul className="intro-content">
-        <li><strong>Vertical Privilege Escalation:</strong> Gaining higher privileges (e.g., from a normal user to root).</li>
-        <li><strong>Horizontal Privilege Escalation:</strong> Gaining access to another user's account with similar privileges.</li>
-      </ul>
-
-      <h2 className="intro-title">Next Steps</h2>
-      <p className="intro-content">
-        Explore various techniques, tools, and mitigation strategies to understand Linux privilege escalation in depth.
+      <h2>Why is Privilege Escalation Important?</h2>
+      <p>
+        Privilege escalation is a critical attack vector because it allows an attacker to bypass security restrictions and access sensitive information or perform malicious actions that could compromise the entire system. By escalating privileges, attackers can gain access to files, configurations, and network resources that are not accessible to regular users.
+      </p>
+      <p>
+        Understanding privilege escalation techniques is essential for both attackers (for penetration testing and CTF challenges) and defenders (to secure systems and prevent unauthorized access).
       </p>
     </div>
   );

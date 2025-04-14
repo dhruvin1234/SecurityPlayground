@@ -5,7 +5,7 @@ import Lab from "./pages/lab/lab";
 import React from 'react';
 
 
-import WindowsPentesting from "./pages/insight/windows";
+import WindowsPentesting from "./pages/insight/windows/windows";
 import Linux from "./pages/insight/linux/Linux";  // ✅ FIXED IMPORT
 import SqlInjection from "./pages/lab/sql-injection/index";  
 import Lab1 from "./pages/lab/sql-injection/lab1/lab1";  

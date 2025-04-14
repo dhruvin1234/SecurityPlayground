@@ -1,0 +1,187 @@
+/* General container for the Tools section */
+.types-container {
+    padding: 30px;
+    background-color: #fdfdfd;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings Styling */
+.types-container h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.types-container h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #34495e;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    scroll-margin-top: 100px; /* ensure headings aren't hidden under sticky navbar */
+}
+
+/* Paragraph Styling */
+.types-container p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* Styling for Code Blocks */
+.types-container pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    color: #2c3e50;
+}
+
+/* Lists Styling */
+.types-container ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.types-container ul li {
+    margin-bottom: 8px;
+}
+
+/* Note/Tip Box Styling */
+.types-container .note {
+    background-color: #eaf6ff;
+    border-left: 5px solid #3498db;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Privilege Escalation Tools Section */
+#tools {
+    margin-top: 40px;
+}
+
+#tools h2 {
+    font-size: 24px;
+    color: #e67e22;
+    border-left: 4px solid #e67e22;
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+#tools h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#tools p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+#tools ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#tools ul li {
+    margin-bottom: 8px;
+}
+
+#tools a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+#tools a:hover {
+    text-decoration: underline;
+}
+
+/* Note/Tip Box in Tools */
+#tools .note {
+    background-color: #fff8e1;
+    border-left: 5px solid #f39c12;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+/* Styling for usage code blocks in tools */
+#tools pre {
+    background-color: #f4f4f4;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    font-family: monospace;
+    color: #2c3e50;
+}
+
+/* Hover effect for Tools cards */
+.tool-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h4 {
+    color: #2980b9;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tool-card .description {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.tool-card .usage {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .types-container {
+        padding: 20px;
+    }
+
+    .tool-card {
+        padding: 15px;
+    }
+
+    #tools ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

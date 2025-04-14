@@ -36,14 +36,6 @@ const FileUpload = () => {
             <h2>Public Upload Directory Exposure</h2>
             <p>Files accessible directly after upload.</p>
           </Link>
-          <Link to="/lab/fileupload/lab4" className="sql-card">
-            <h2>No Size Limit (DoS Upload)</h2>
-            <p>Upload huge files to overload the server.</p>
-          </Link>
-          <Link to="/lab/fileupload/lab5" className="sql-card">
-            <h2>Filename Path Traversal</h2>
-            <p>Manipulate filenames to access system paths.</p>
-          </Link>
         </div>
       </div>
     </>

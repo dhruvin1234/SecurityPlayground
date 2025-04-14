@@ -29,9 +29,9 @@ const LandingPage = () => {
                     <div className="logo">🔒 SecurityPlayGround</div>
                     <ul className="nav-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
                         <li><a href="/lab">Lab</a></li>
                         <li><a href="/insight">Insights</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>

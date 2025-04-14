@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
 import Navbar from "./Navbar";
-import "./Linux.css";
+import "./windows.css";
 import Intro from "./Intro";
 import TypesOfPrivilegeEscalation from "./TypesOfPrivilegeEscalation";
 import Tools from "./Tools";
 import MitigationAndDefense from "./MitigationAndDefense";
 
-const Linux = () => {
+const Windows = () => {
   const [selectedSection, setSelectedSection] = useState("Intro");
   const [expanded, setExpanded] = useState(false);
   const subSectionRef = useRef(null);
@@ -36,7 +36,7 @@ const Linux = () => {
   };
 
   return (
-    <div className="linux-container">
+    <div className="windows-container">
       <Navbar />
       <div className="main-content">
         <div className="sidebar">
@@ -51,13 +51,17 @@ const Linux = () => {
             {expanded && (
               <ul className="sub-menu">
                 {[
-                  "KernelExploits",
-                  "SUIDBinaries",
-                  "FilePermissions",
-                  "RootServices",
-                  "ConfigPasswords",
-                  "CronJobs",
-                  "EnvVariables",
+                  "UnquotedServicePaths",
+                  "RegistryMisconfig",
+                  "InsecureServicePermissions",
+                  "AlwaysInstallElevated",
+                  "InsecureFilePermissions",
+                  "InsecureDlls",
+                  "WeakPasswordPolicies",
+                  "TokenImpersonation",
+                  "UacBypass",
+                  "ScheduledTasks",
+                  "PatchedVulnerabilities"
                 ].map((topic) => (
                   <li key={topic} className="sidebar-sub-item" onClick={() => handleSubSectionClick(topic)}>
                     {topic.replace(/([A-Z])/g, " $1").trim()}
@@ -65,7 +69,6 @@ const Linux = () => {
                 ))}
               </ul>
             )}
-            
             <li className={`sidebar-item ${selectedSection === "Tools" ? "active" : ""}`} onClick={() => setSelectedSection("Tools")}>
               Privilege Escalation Tools
             </li>
@@ -83,4 +86,4 @@ const Linux = () => {
   );
 };
 
-export default Linux;
+export default Windows;
