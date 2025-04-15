@@ -8,7 +8,11 @@ const Lab5 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setResult(search); // Vulnerable to XSS via event handlers
+
+    // Sanitize <script> tags
+    const sanitizedInput = search.replace(/<script.*?>.*?<\/script>/gi, "[blocked script]");
+
+    setResult(sanitizedInput);
   };
 
   return (
@@ -56,3 +60,7 @@ const Lab5 = () => {
 };
 
 export default Lab5;
+
+
+{/* <code>{`<img src="x" onerror="alert('XSS')">`}</code> or{" "} */}
+{/* <code>{`<a href="#" onclick="alert('XSS')">Click</a>`}</code> */}

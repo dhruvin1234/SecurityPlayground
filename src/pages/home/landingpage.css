@@ -82,6 +82,11 @@ body {
     font-weight: bold;
 }
 
+.hero-content p {
+    font-size: 20px;
+    text-align: justify
+    /* font-weight: bold; */
+}
 .hero-content span {
     color: #ff416c;
 }

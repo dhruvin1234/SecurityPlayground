@@ -5,11 +5,6 @@ const Intro = () => {
   return (
     <div className="intro-section">
       <h1>Introduction to Web Penetration Testing</h1>
-
-      <p>
-        
-      </p>
-
       <p>
       Web penetration testing (web pentesting) is the process of testing and evaluating the security of a web application or website to identify vulnerabilities that could be exploited by attackers.      
       </p>

@@ -9,9 +9,9 @@ const SSTI = () => {
         <div className="logo">🔒 SecurityPlayGround</div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
           <li><Link to="/lab">Lab</Link></li>
           <li><Link to="/insight">Insights</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
@@ -33,8 +33,8 @@ const SSTI = () => {
           </Link>
         
           <Link to="/lab/ssti/lab3" className="sql-card">
-            <h2>HTML Generator Exploit</h2>
-            <p>Inject payload in a dynamic page generator to trigger SSTI.</p>
+            <h2>SSTI to RCE</h2>
+            <p>Execute commands on the server by exploiting SSTI in unsafe templates.</p>
           </Link>
         </div>
       </div>

@@ -54,7 +54,7 @@ export default XSSLab2;
 //this all paload work here
 // img src=x onerror=alert('XSS')>
 
-// <svg onload=alert('XSS')>
+  // <svg onload=alert('XSS')>
 
 // <iframe src="javascript:alert('XSS')">
 

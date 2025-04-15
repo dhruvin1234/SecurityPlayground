@@ -1,64 +1,89 @@
-.lab2-container {
-  background-color: #0f0f0f;
-  color: #f96b6b;
-  padding: 40px;
-  min-height: 100vh;
-  font-family: sans-serif;
-}
-
-.lab2-container h2 {
-  font-size: 26px;
-  color: #ff5f5f;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 80%;
-  padding: 8px;
-  font-size: 16px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #ff5f5f;
-  color: white;
-  padding: 8px 16px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-button:hover {
-  background-color: #e65555;
-}
-
-table {
-  width: 90%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  background-color: white;
-  color: black;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-th {
-  background-color: #f96b6b;
-  color: white;
-  text-align: left;
-}
-
-.error-msg {
-  color: #ff5f5f;
-  background: #1a1a1a;
-  padding: 10px;
-  border: 1px solid red;
-  margin-top: 20px;
-}
+/* Unique wrapper to isolate styles */
+.sqllab2-wrapper {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Main container */
+  .sqllab2-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  /* Headings */
+  .sqllab2-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .sqllab2-container p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #cfd8dc;
+  }
+  
+  /* Input */
+  .sqllab2-container input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #1c2b36;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  .sqllab2-container button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #102a43;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sqllab2-container button:hover {
+    background-color: #0a1f33;
+  }
+  
+  /* Messages */
+  .sqllab2-message {
+    margin-top: 15px;
+    color: #81d4fa;
+  }
+  
+  .sqllab2-error {
+    margin-top: 15px;
+    color: #ef5350;
+  }
+  
+  /* Results */
+  .sqllab2-results {
+    margin-top: 20px;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  .sqllab2-results h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  

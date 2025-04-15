@@ -1,12 +1,12 @@
 import React from "react";
-import "./Navbar.css";
+import "./navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="web-navbar">
-      <div className="web-logo">🔒 SecurityPlayGround</div>
-      <ul className="web-nav-links">
+    <nav className="nav-bar-container">
+      <div className="nav-logo">🔒 SecurityPlayGround</div>
+      <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/insight">Insights</Link></li>
         <li><Link to="/lab">Lab</Link></li>

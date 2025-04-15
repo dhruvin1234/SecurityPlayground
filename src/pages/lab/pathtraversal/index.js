@@ -9,9 +9,9 @@ const PathTraversal = () => {
         <div className="logo">🔒 SecurityPlayGround</div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
           <li><Link to="/lab">Lab</Link></li>
           <li><Link to="/insight">Insights</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
@@ -39,11 +39,6 @@ const PathTraversal = () => {
             <h2>Traversal with Bypassed Extensions</h2>
             <p>Bypass file-type restrictions and still access sensitive content.</p>
           </Link>
-          <Link to="/lab/path-traversal/lab5" className="pt-card">
-            <h2>Traversal in File Download</h2>
-            <p>Abuse download endpoints to retrieve unauthorized files.</p>
-          </Link>
-          
         </div>
       </div>
     </>

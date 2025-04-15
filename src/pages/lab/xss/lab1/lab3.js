@@ -1,33 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import "./lab3.css";
 
-const XSSLab3 = () => {
-  const [payload, setPayload] = useState("");
+const Lab3 = () => {
+  const [search, setSearch] = useState("");
+  const [result, setResult] = useState("");
 
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("q");
-    if (q) {
-      const decoded = decodeURIComponent(q);
-      setPayload(decoded); // Set directly to use dangerouslySetInnerHTML
-    }
-  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Directly set input as HTML without sanitization
+    setResult(search);  // Directly set the input to result
+  };
 
   return (
-    <div style={{ padding: "60px", color: "#0f0", backgroundColor: "#1e1e2f", minHeight: "100vh" }}>
-      <h1 style={{ color: "#fff" }}>DOM-Based XSS Lab 3</h1>
-      <p>Pass your payload via <code>?q=</code> in the URL</p>
-      
-      <div
-        style={{
-          border: "2px solid #444",
-          padding: "10px",
-          marginTop: "30px",
-          backgroundColor: "#111",
-          borderRadius: "10px",
-        }}
-        dangerouslySetInnerHTML={{ __html: payload }}
-      />
+    <div className="lab3-container">
+      <div className="lab3-box">
+        <h1 className="lab3-title">DOM-Based XSS Lab</h1>
+        <p className="lab3-description">
+          In this lab, you can try injecting payloads to trigger DOM-based XSS.
+          The injected payload will be executed directly on the DOM.
+        </p>
+
+        <form onSubmit={handleSubmit} className="lab3-form">
+          <input
+            type="text"
+            placeholder="Inject payload here"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="lab3-input"
+          />
+          <button type="submit" className="lab3-button">
+            Inject
+          </button>
+        </form>
+
+        <div className="lab3-output">
+          <h3>Output:</h3>
+          {/* Dangerous innerHTML rendering to allow XSS */}
+          <div
+            className="lab3-result-box"
+            dangerouslySetInnerHTML={{ __html: result }} // Allows raw HTML injection
+          />
+        </div>
+      </div>
     </div>
   );
+
+ 
 };
 
-export default XSSLab3;
+export default Lab3;
+
+
+// <img src="x" onerror="alert('XSS')">
+// <a href="javascript:alert('XSS')">Click Me</a>
+// <iframe src="data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4="></iframe>

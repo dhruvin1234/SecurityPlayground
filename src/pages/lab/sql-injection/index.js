@@ -9,9 +9,9 @@ const SQLInjection = () => {
         <div className="logo">🔒 SecurityPlayGround</div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
           <li><Link to="/lab">Lab</Link></li>
           <li><Link to="/insight">Insights</Link></li>
+          <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
@@ -24,15 +24,15 @@ const SQLInjection = () => {
 
         <div className="sql-grid">
           <Link to="/lab/sql-injection/lab1" className="sql-card">
-            <h2>Basic SQL Injection</h2>
-            <p>Understanding the basics of SQL Injection.</p>
+            <h2>Basic SQL Injection (Login Bypass)</h2>
+            <p>Understanding the basics of SQL Injection With Login Bypass.</p>
           </Link>
           <Link to="/lab/sql-injection/lab2" className="sql-card">
-            <h2>Login Bypass</h2>
-            <p>Bypassing authentication using SQL Injection.</p>
+            <h2>Determine Column with Union-Based Injection</h2>
+            <p>Extracting data using UNION queries.</p>
           </Link>
           <Link to="/lab/sql-injection/lab3" className="sql-card">
-            <h2>Union-Based Injection</h2>
+            <h2>Determine Column with Union-Based Injection</h2>
             <p>Extracting data using UNION queries.</p>
           </Link>
           <Link to="/lab/sql-injection/lab4" className="sql-card">
@@ -40,14 +40,10 @@ const SQLInjection = () => {
             <p>Leveraging error messages to extract information.</p>
           </Link>
           <Link to="/lab/sql-injection/lab5" className="sql-card">
-            <h2>Blind SQL Injection</h2>
-            <p>Exploiting databases without error messages.</p>
-          </Link>
-          <Link to="/lab/sql-injection/lab6" className="sql-card">
             <h2>Boolean-Based Injection</h2>
             <p>Exploiting SQL Injection using boolean logic.</p>
           </Link>
-          <Link to="/lab/sql-injection/lab7" className="sql-card">
+          <Link to="/lab/sql-injection/lab6" className="sql-card">
             <h2>Time-Based Injection</h2>
             <p>Extracting data using time delays.</p>
           </Link>

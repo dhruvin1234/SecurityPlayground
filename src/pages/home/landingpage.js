@@ -31,8 +31,8 @@ const LandingPage = () => {
                         <li><a href="#">Home</a></li>
                         <li><a href="/lab">Lab</a></li>
                         <li><a href="/insight">Insights</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -40,10 +40,13 @@ const LandingPage = () => {
             <section className="hero">
                 <div className="hero-content">
                     <h1 className="typing-text">{displayedText}</h1>
-                    <p>The internet is growing, and so are cyber threats. Learning cybersecurity helps you stay safe and protect others.<br /> Start now and build a secure future!</p>
+                    <p>The internet is growing, and so are cyber threats. Learning cybersecurity helps you stay safe and protect others.Start now and build a secure future!</p>
                     <div className="buttons">
-                        <button className="video-btn">▶ Start Now</button>
+                        <a href="/insight" target="_blank" rel="noopener noreferrer">
+                            <button className="video-btn">▶ Start Now</button>
+                        </a>
                     </div>
+
                 </div>
             </section>
         </div>

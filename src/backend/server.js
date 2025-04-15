@@ -11,7 +11,6 @@ const multer = require("multer");
 const app = express();
 const db = new sqlite3.Database(":memory:");
 
-
 const PORT = 5000;
 
 app.use(cors());
@@ -24,12 +23,22 @@ db.serialize(() => {
   db.run("INSERT INTO users (username, password) VALUES ('admin', 'password123')");
   db.run("INSERT INTO users (username, password) VALUES ('user', 'userpass')");
 
-  // Employees table for SQLi Lab 2
+  // Employees table for SQLi Lab 2 (Union-Based Injection)
+  db.run("CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, price REAL)");
+
+db.run("INSERT INTO products (id, name, price) VALUES (1, 'Laptop', 799.99)");
+db.run("INSERT INTO products (id, name, price) VALUES (2, 'Smartphone', 499.99)");
+db.run("INSERT INTO products (id, name, price) VALUES (3, 'Headphones', 99.99)");
+db.run("INSERT INTO products (id, name, price) VALUES (4, 'Keyboard', 39.99)");
+db.run("INSERT INTO products (id, name, price) VALUES (5, 'Monitor', 199.99)");
+
+  
   db.run("CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, secret TEXT)");
   db.run("INSERT INTO employees (name, age, secret) VALUES ('Alice', 28, 'Top Secret 1')");
   db.run("INSERT INTO employees (name, age, secret) VALUES ('Bob', 35, 'Top Secret 2')");
   db.run("INSERT INTO employees (name, age, secret) VALUES ('Charlie', 40, 'Hidden Flag')");
   db.run("INSERT INTO employees (name, age, secret) VALUES ('Eve', 45, 'Sensitive Info')");
+  db.run("INSERT INTO employees (name, age, secret) VALUES ('mukhi', 65, 'not good well')");
 });
 
 // ==================== SQL INJECTION LAB 1 ====================
@@ -47,6 +56,75 @@ app.post("/login", (req, res) => {
     }
   });
 });
+
+// ==================== SQL INJECTION LAB 2 ====================
+app.get("/api/products", (req, res) => {
+  const id = req.query.id;
+
+  // Basic query to fetch product info
+  const query = `SELECT name, price FROM products WHERE id = ${id}`;
+
+  // Union-based query fetching from employees table
+//  const unionQuery = `SELECT name, secret AS price FROM employees WHERE id = ${id}`;  // Aliasing `secret` to match column names
+  
+  // SQL query with UNION
+  // const sql = ${query};
+
+  console.log("[+] Executing Query:", query);
+
+  db.all(query, (err, rows) => {
+    if (err) {
+      console.error("SQL Error:", err.message);
+      return res.status(500).json({ error: 'SQL Error' });
+    }
+    console.log("[+] Query Results:", rows); // Log the query results for debugging
+    res.json(rows); // Send the results to the frontend
+  });
+});
+
+// ==================== SQL INJECTION LAB 3 ====================
+app.get("/api/products/lab3", (req, res) => {
+  const id = req.query.id;
+
+  // Basic query to fetch product info
+  // const query = `SELECT name, price FROM products WHERE id = ${id}`;
+
+  // Union-based query fetching from employees table
+ const unionQuery = `SELECT name, secret FROM employees WHERE id = ${id}`;  // Aliasing `secret` to match column names
+  
+  // SQL query with UNION
+  // const sql = ${query};
+
+  console.log("[+] Executing Query:", unionQuery);
+
+  db.all(unionQuery, (err, rows) => {
+    if (err) {
+      console.error("SQL Error:", err.message);
+      return res.status(500).json({ error: 'SQL Error' });
+    }
+    console.log("[+] Query Results:", rows); // Log the query results for debugging
+    res.json(rows); // Send the results to the frontend
+  });
+});
+
+// ==================== SQL INJECTION LAB 4 ====================
+// Vulnerable SQL injection endpoint
+app.get('/lab4', (req, res) => {
+  const id = req.query.id;
+  const query = `SELECT * FROM employees WHERE id = ${id}`; // Vulnerable to SQLi
+
+  db.get(query, (err, row) => {
+    if (err) {
+      res.send(`SQL Error: ${err.message}`);
+    } else if (row) {
+      res.send(`Name: ${row.name}\nAge: ${row.age}\nSecret: ${row.secret}`);
+    } else {
+      res.send("No employee found with that ID.");
+    }
+  });
+});
+
+
 
 // ==================== COMMAND INJECTION LAB 1 ====================
 app.post("/api/commandinjection/lab1/ping", (req, res) => {
@@ -170,21 +248,20 @@ app.post("/api/ssti/lab2", (req, res) => {
 
 // ==================== SSTI LAB 3 ====================
 app.post("/api/ssti/lab3", (req, res) => {
-  const { template } = req.body;
+  const { emailTemplate } = req.body;
 
-  if (!template) {
+  if (!emailTemplate) {
     return res.status(400).json({ error: "Template input is required" });
   }
 
   try {
     // ❗ Intentionally vulnerable: Pass access to entire Node.js environment
-    const output = ejs.render(template, { process, require, global });
+    const output = ejs.render(emailTemplate, { process, require, global });
     res.json({ output });
   } catch (err) {
     res.status(500).json({ error: "Template render failed", details: err.message });
   }
 });
-
 
 
 
@@ -338,10 +415,11 @@ app.post("/api/ssrf/lab3", async (req, res) => {
 });
 
 // ==================== SSRF LAB 4 ====================
+app.get("/", (req, res) => {
+  res.send("🎉 Hello from internal server!");
+});
 
-
-app.use(express.json());
-
+// ==================== SSRF LAB 4 ====================
 app.post("/api/ssrf/lab4", async (req, res) => {
   const { url } = req.body;
 
@@ -350,45 +428,43 @@ app.post("/api/ssrf/lab4", async (req, res) => {
   }
 
   try {
-    // Decode the URL to handle encoded characters
     const decodedUrl = decodeURIComponent(url);
 
-    // Block direct access to localhost or 127.0.0.1 (excluding specific ports)
-    if ((decodedUrl.includes('localhost') || decodedUrl.includes('127.0.0.1')) &&
-        !decodedUrl.includes(':5000')) {
+    if (
+      (decodedUrl.includes("localhost") || decodedUrl.includes("127.0.0.1")) &&
+      !decodedUrl.includes(":5000")
+    ) {
       return res.json({
         error: true,
-        message: "Blocked request to internal service (localhost/127.0.0.1), except port 5000",
+        message: "❌ Blocked request to internal service (localhost/127.0.0.1), except port 5000",
+        blocked: true,
       });
     }
 
-    // Fetch the URL initially to check for redirection
-    const response = await fetch(decodedUrl, { redirect: 'manual', timeout: 3000 });
-
-    // Check for 3xx (redirect) status code
-    if ([301, 302, 303, 307, 308].includes(response.status)) {
-      const redirectUrl = response.headers.get('Location');
-      
-      // Block redirect to localhost or 127.0.0.1 (except port 5000)
-      if ((redirectUrl.includes('localhost') || redirectUrl.includes('127.0.0.1')) &&
-          !redirectUrl.includes(':5000')) {
-        return res.json({
-          error: true,
-          message: "Blocked redirect to internal service (localhost/127.0.0.1), except port 5000",
-        });
-      }
-    }
-
-    // If no redirect, proceed to fetch the content
+    // Follow redirect
+    const response = await fetch(decodedUrl, { redirect: "follow", timeout: 3000 });
     const contentType = response.headers.get("content-type") || "";
     const body = await response.text();
+
+    // Check if content is an image
+    const isImage = contentType.startsWith("image");
+    let dataUrl = null;
+
+    if (isImage) {
+      const buffer = Buffer.from(body, "binary");
+      dataUrl = `data:${contentType};base64,${buffer.toString("base64")}`;
+    }
+
     res.json({
       status: response.status,
       contentType,
-      body,
+      isImage,
+      body: isImage ? null : body,
+      dataUrl,
+      bypassed: decodedUrl.includes("httpbin.org") && decodedUrl.includes("127.0.0.1"),
     });
-
   } catch (err) {
+    console.error("SSRF error:", err.message);
     res.json({
       error: true,
       message: "❌ Failed to fetch URL",
@@ -397,23 +473,47 @@ app.post("/api/ssrf/lab4", async (req, res) => {
 });
 
 // ==================== SSRF LAB 5 ====================
-app.use(cors());
-app.use(express.json());
 
-app.post("/api/ssrf/lab5", async (req, res) => {
+// Serve the secret.txt file
+app.get('/secret.txt', (req, res) => {
+  const filePath = path.join(__dirname, 'secret.txt');
+  res.sendFile(filePath);
+});
+
+// Handle SSRF fetch
+app.post('/fetch-url', async (req, res) => {
   const { url } = req.body;
 
-  console.log("🌐 Received SSRF URL:", url); // <== ✅ Add this line
+  if (!url) {
+    return res.status(400).json({ success: false, message: 'No URL provided' });
+  }
 
   try {
-    await axios.get(url, { timeout: 3000 });
-    console.log("✅ Request successfully sent to:", url); // <== ✅ Add this line
-    res.json({ message: "✅ Request sent successfully (Blind SSRF simulated)" });
+    const response = await fetch(url);
+    const text = await response.text();
+
+    if (response.ok) {
+      return res.status(200).json({
+        success: true,
+        message: 'Request sent successfully',
+        content: text
+      });
+    } else {
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to fetch URL',
+        content: text
+      });
+    }
   } catch (error) {
-    console.log("❌ Error sending request:", error.message); // <== ✅ Add this line
-    res.json({ message: "❌ Request failed or blocked" });
+    console.error('Error fetching URL:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Error occurred while fetching URL'
+    });
   }
 });
+
 
 
 // ========== SSRF LAB 6 ==========
