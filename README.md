@@ -63,4 +63,12 @@ This lab simulates a vulnerable system command interface where user input is dir
 <img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/753aa4d7-fc8a-4cfa-971e-bf613ef12129" />
 
 ### Command Injection Lab (Demo)
+```
+104.21.25.166;whoami
+```
 <img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/f875cf55-dea4-48a6-844b-d3212ca35c05" />
+
+```
+104.21.25.166;ls
+```
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/f4da0014-5f96-446b-99eb-a82f3e601543" />
