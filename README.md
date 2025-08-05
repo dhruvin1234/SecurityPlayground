@@ -12,3 +12,29 @@ Security Playground is an interactive vulnerable web application designed for le
 - SSRF
 - SSTI (Server-side template injection)
 - API Testing
+
+## 🚀 Installation
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourname/security-playground.git
+   ```
+2. **Go into the project folder**
+   ```
+   cd security-playground
+   ```
+
+3. **Install all dependencies**
+   ```
+   npm install
+   ```
+## ▶️ How to Start
+1. **Run the development server using:**
+   ```
+   npm start
+   ```
+2. **Now open your browser and go to:**
+  ```http://localhost:3000```
+
+
+
+
