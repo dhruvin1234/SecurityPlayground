@@ -64,11 +64,23 @@ This lab simulates a vulnerable system command interface where user input is dir
 
 ### Command Injection Lab (Demo)
 ```
+Example Payload:
 104.21.25.166;whoami
 ```
 <img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/f875cf55-dea4-48a6-844b-d3212ca35c05" />
 
 ```
+Example Payload:
 104.21.25.166;ls
 ```
 <img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/f4da0014-5f96-446b-99eb-a82f3e601543" />
+
+### File Upload Vulnerability Labs
+<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/b48dc389-b3a8-4eea-879c-16bfd990f658" />
+
+### File Upload Lab – No File Type Validation (Demo)
+```
+Example exploitation:  
+Upload a `.php` reverse shell instead of an image to achieve remote code execution.
+```
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2e7302e6-e643-45c9-97fd-9e3e4626d8e7" />
