@@ -46,5 +46,14 @@ Security Playground is an interactive vulnerable web application designed for le
 ### Homepage of Security Playground
 <img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/3f160c20-d7c0-4dc1-94c4-f1e855b5a9aa" />
 
+### Lab Dashboard (Vulnerability Selection Page)
+<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/c0ae4ba8-5de7-437f-950c-c10990b9e48c" />
 
+### Insights Section (Learning Material)
+<img width="1920" height="922" alt="image" src="https://github.com/user-attachments/assets/7a511b23-ff4d-4470-9acd-5d50cfe32f99" />
 
+### About Page (Vision & Mission)
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/a34cb13e-dd30-4a6c-8ec8-96f0e19be1f2" />
+
+### Contact Page
+<img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/2a4bab75-51a4-473f-8b54-b81f1a1ddf73" />
