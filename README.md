@@ -27,6 +27,12 @@ Security Playground is an interactive vulnerable web application designed for le
    ```
    npm install
    ```
+4. **Note: If you get react-scripts: not found, then run:**
+   ```
+   npm install react-scripts --save
+   ```
+   and then run npm start again.
+   
 ## ▶️ How to Start
 1. **Run the development server using:**
    ```
