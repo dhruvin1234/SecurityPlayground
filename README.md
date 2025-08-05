@@ -41,6 +41,10 @@ Security Playground is an interactive vulnerable web application designed for le
 2. **Now open your browser and go to:**
   ```http://localhost:3000```
 
+## 🖼️ Screenshot
+
+###Homepage of Security Playground
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/3f160c20-d7c0-4dc1-94c4-f1e855b5a9aa" />
 
 
 
