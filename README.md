@@ -57,3 +57,7 @@ Security Playground is an interactive vulnerable web application designed for le
 
 ### Contact Page
 <img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/2a4bab75-51a4-473f-8b54-b81f1a1ddf73" />
+
+### 🔧 Command Injection Lab
+This lab simulates a vulnerable system command interface where user input is directly passed to an OS command without sanitization — allowing the attacker to inject additional commands.
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/753aa4d7-fc8a-4cfa-971e-bf613ef12129" />
