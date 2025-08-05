@@ -80,7 +80,9 @@ Example Payload:
 
 ### File Upload Lab – No File Type Validation (Demo)
 ```
-Example exploitation:  
-Upload a `.php` reverse shell instead of an image to achieve remote code execution.
+Example Exploitation:
+Upload a `.php` reverse shell (e.g., `shell.php`) instead of an image to achieve Remote Code Execution (RCE).
 ```
-<img width="1920" height="923" alt="image" src="https://github.com/user-attachments/assets/2e7302e6-e643-45c9-97fd-9e3e4626d8e7" />
+<img width="1920" height="924" alt="image" src="https://github.com/user-attachments/assets/0cd02ae1-6c50-498d-91ec-f246b5f2111e" />
+
+
